@@ -38,7 +38,6 @@ public class Main extends JavaPlugin implements Listener {
             }
         }
         return false;
-        }
     }
 
     @EventHandler
@@ -65,6 +64,6 @@ public class Main extends JavaPlugin implements Listener {
                 return true;
             }
         } else
-        return false;
+            return false;
     }
 }
