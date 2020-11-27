@@ -34,12 +34,11 @@ public class Main extends JavaPlugin implements Listener {
         int z = location.getBlockZ();
         for(int y = 0; y <= originalY; y++){
             if(!entity.getWorld().getBlockAt(x, y, z).getType().equals(Material.AIR)){
-                nonAirBlocks += 1;
+                return true;
             }
         }
-        if(nonAirBlocks > 0){
-            return false;
-        } else return true;
+        return false;
+        }
     }
 
     @EventHandler
