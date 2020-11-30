@@ -28,11 +28,12 @@ public class EntityStaticData{
         return false;
     }
 
-    public Location getLocation(int id){
+    public Location getLocation(int id){ 
         int counter = -1;
-        for(int i = 0; i < entityIds.size(); i++){
+        for(int i = 0; i < entityIds.size(); i++){ //use indexOf instead?
             counter += 1;
             if(entityIds.get(i) == id){
+                break;
             }
         }
         return new Location(Bukkit.getServer().getWorld("world"), entX.get(counter), entY.get(counter), entZ.get(counter));
@@ -50,8 +51,8 @@ public class EntityStaticData{
         Bukkit.getServer().getLogger().info("Entity " + id + " was added: " + ChatColor.YELLOW + "" + x + ", " + y + ", " + z);
     }
 
-    public void removeEntity(int id){
-        for(int i = 0; i < entityIds.size(); i++){
+    public void removeEntity(int id){ 
+        for(int i = 0; i < entityIds.size(); i++){ //use indexOf?
             if(entityIds.get(i) == id){
                 entityIds.remove(i);
                 entX.remove(i);
