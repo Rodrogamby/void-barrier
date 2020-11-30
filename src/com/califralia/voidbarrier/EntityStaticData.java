@@ -1,8 +1,7 @@
 package com.califralia.voidbarrier;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.entity.Entity;
 
 import java.util.ArrayList;
@@ -28,15 +27,9 @@ public class EntityStaticData{
         return false;
     }
 
-    public Location getLocation(int id){ 
-        int counter = -1;
-        for(int i = 0; i < entityIds.size(); i++){ //use indexOf instead?
-            counter += 1;
-            if(entityIds.get(i) == id){
-                break;
-            }
-        }
-        return new Location(Bukkit.getServer().getWorld("world"), entX.get(counter), entY.get(counter), entZ.get(counter));
+    public Location getLocation(int id, World world){
+        int index = entityIds.indexOf(id);
+        return new Location(world, entX.get(index), entY.get(index), entZ.get(index));
     }
 
     public void saveEntity(Entity entity){
@@ -44,26 +37,24 @@ public class EntityStaticData{
         double y = entity.getLocation().getY();
         double z = entity.getLocation().getZ();
         int id = entity.getEntityId();
-        entityIds.add(id);
-        entX.add(x);
-        entY.add(y);
-        entZ.add(z);
-        Bukkit.getServer().getLogger().info("Entity " + id + " was added: " + ChatColor.YELLOW + "" + x + ", " + y + ", " + z);
+        if(id > -1) {
+            entityIds.add(id);
+            entX.add(x);
+            entY.add(y);
+            entZ.add(z);
+        }
     }
 
-    public void removeEntity(int id){ 
-        for(int i = 0; i < entityIds.size(); i++){ //use indexOf?
-            if(entityIds.get(i) == id){
-                entityIds.remove(i);
-                entX.remove(i);
-                entY.remove(i);
-                entZ.remove(i);
-                Bukkit.getServer().getLogger().info("Entity " + id + " was removed.");
-                return;
-            }
+    public void removeEntity(int id) {
+        int index = entityIds.indexOf(id);
+        if (index > -1) {
+            entityIds.remove(index);
+            entX.remove(index);
+            entY.remove(index);
+            entZ.remove(index);
         }
-        Bukkit.getServer().getLogger().info(ChatColor.RED + "Entity " + id + " could not be removed.");
     }
+
 
 
 }
