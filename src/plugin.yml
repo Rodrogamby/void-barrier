@@ -1,18 +1,7 @@
 name: VoidBarrier
-description: Prevents players from walking into void tiles.
+description: Prevents players and mobs from walking into void tiles.
 author: Rodro
 prefix: VoidBarrier
 main: com.califralia.voidbarrier.Main
 version: 1.0
 api-version: 1.16
-commands:
-  detectVoid:
-    description: Command used for plugin debug.
-    usage: /<command>
-    permission: voidbarrier.detectvoid
-    permission-message: You are not allowed to use this command.
-permissions:
-  voidbarrier.detectvoid:
-    description: Allows you to use the detectVoid command
-    default: true
-
