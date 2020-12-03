@@ -19,10 +19,8 @@ public class EntityStaticData{
     private List<Double> entZ = new ArrayList<>();
 
     public boolean isEntityOnMaster(int id){
-        for(int entId : entityIds){
-            if(entId == id){
-                return true;
-            }
+        if(entityIds.contains(id)){
+            return true;
         }
         return false;
     }
@@ -54,7 +52,5 @@ public class EntityStaticData{
             entZ.remove(index);
         }
     }
-
-
 
 }
