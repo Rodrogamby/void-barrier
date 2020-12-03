@@ -14,3 +14,23 @@ worldName: world
 
 #Prefix for in-game commands. Use § for color codes.
 prefix: "§8[§bServer§8] "
+
+#Entities allowed to go into the void.
+# Use Entity types from: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
+whitelisted:
+  - PLAYER #It is highly recommended to keep this one since player movement is handled separately.
+  - EXPERIENCE_ORB
+  - BOAT
+  - MINECART
+  - MINECART_CHEST
+  - MINECART_COMMAND
+  - MINECART_FURNACE
+  - MINECART_HOPPER
+  - MINECART_MOB_SPAWNER
+  - MINECART_TNT
+  - DROPPED_ITEM
+  - ITEM_FRAME
+  - PAINTING
+
+#Do not change. It allows the plugin to update this file in future updates.
+config-version: 1
