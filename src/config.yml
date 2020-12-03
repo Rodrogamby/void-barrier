@@ -9,7 +9,7 @@
 enabled: true
 
 #Set this the name of the world you want to enable the plugin in.
-#Make sure you set this an actual world, otherwise the world will be set to the server's default.
+#Make sure you set this to an actual world to avoid errors.
 worldName: world
 
 #Prefix for in-game commands. Use § for color codes.
