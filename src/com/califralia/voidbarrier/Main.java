@@ -127,8 +127,7 @@ public class Main extends JavaPlugin implements Listener {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("voidBarrier")) {
             if (sender instanceof Player) {
-                if (sender.hasPermission("voidbarrier.barrier.toggle")) {
-                    if (args.length > 0) {
+                    if (args.length > 0 && sender.hasPermission("voidbarrier.barrier.toggle")) {
                         switch (args[0]) {
                             case "enable":
                                 enabled = true;
@@ -144,10 +143,9 @@ public class Main extends JavaPlugin implements Listener {
                                 return false;
                         }
                     } else {
-                        sender.sendMessage(prefix + ChatColor.GRAY + "Running VoidBarrier " + ChatColor.YELLOW + "v1.1.0");
+                        sender.sendMessage(prefix + ChatColor.GRAY + "Running VoidBarrier " + ChatColor.YELLOW + "v1.1.1");
                         return true;
                     }
-                }
             } else {
                 sender.sendMessage("This command must be used by a player");
                 return true;

@@ -1,0 +1,20 @@
+name: VoidBarrier
+description: Prevents players and mobs from walking into void tiles.
+author: Rodro
+prefix: VoidBarrier
+main: com.califralia.voidbarrier.Main
+version: 1.1.1
+api-version: 1.16
+load: STARTUP
+commands:
+  voidbarrier:
+    description: Parent command for barrier management.
+    permission: voidbarrier.barrier.toggle
+    usage: /<command> [enable/disable]
+permissions:
+  voidbarrier.override:
+    description: Allows the player to override the void protection.
+    default: op
+  voidbarrier.barrier.toggle:
+    description: Allows the player to toggle the barrier.
+    default: op
