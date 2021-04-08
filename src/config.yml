@@ -8,7 +8,7 @@
 #This setting cannot be changed by in-game commands.
 enabled: true
 
-#Set this the name of the world you want to enable the plugin in.
+#Set this to the name of the world you want to enable the plugin in.
 #Make sure you set this to an actual world to avoid errors.
 worldName: world
 
